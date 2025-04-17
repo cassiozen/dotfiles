@@ -1,9 +1,32 @@
 
 # Cassio Zen’s dotfiles
 
-## A lightweight, dependency-free setup.
+A lightweight, dependency-free setup for Mac OS.
 
-These are config files to set up Mac OS X command line the way I like it using.
+<img width="486" alt="Image" src="https://github.com/user-attachments/assets/5952bbac-5f5f-4913-9692-8f9768370c78" />
+
+## Features
+
+### ZSH
+
+- Minimal Prompt with GIT info: Shows current branch, staged (+) and unstaged (*) changes
+- Enhanced Completion: Tab completion with menu selection
+- Arrow Key History Search: Type a command prefix and use ↑/↓ to search history
+- Directory Navigation: Convenient aliases for listing directories (`l`, `la`) & Shortcuts like `...` for faster directory traversal
+
+### Git
+
+- Aliases for common commands (`ci`, `co`, `st`)
+- Better Logging: `git lol` and `git graph`
+- Branch Management:
+  - `git publish`: Push and set upstream tracking in one command
+  - `git unpublish`: Remove remote branch easily
+  - `git cleanup`: Safely delete merged branches
+- Quality of Life Improvements:
+  - Automatic stashing during rebases
+  - Default branch set to main
+  - Global gitignore configuration
+
 
 ## Installation
 
@@ -16,38 +39,8 @@ git clone git@github.com/cassiozen/dotfiles ~/.dotfiles
 cd ~/.dotfiles && source bootstrap.sh
 ```
 
-Don't forget to configure your own Git user name and emal:
-
-```zsh
-git config --global user.name "You"
-git config --global user.email "you@xample.com"
-```
-
 To update, `cd` into `.dotfiles` then:
 
 ```zsh
 source bootstrap.sh
 ```
-
-## Features
-
-### ZSH
-
-- Zero Dependencies: Works with a standard Zsh installation, no external frameworks or plugins required.
-- Minimal Prompt: Simple, informative prompt that doesn't clutter your terminal. Includes GIT info: Shows current branch, staged (+) and unstaged (*) changes
-- Enhanced Completion: Tab completion with menu selection
-- Arrow Key History Search: Type a command prefix and use ↑/↓ to search history
-- Directory Navigation: Convenient aliases for listing directories (l, la) & Shortcuts like ... for faster directory traversal
-
-### Git
-
-- Aliases for common commands (ci, co, st)
-- Better Logging: `git lol` and `git graph`
-- Branch Management:
-  - `git publish`: Push and set upstream tracking in one command
-  - `git unpublish`: Remove remote branch easily
-  - `git cleanup`: Safely delete merged branches
-- Quality of Life Improvements:
-  - Automatic stashing during rebases
-  - Default branch set to main
-  - Global gitignore configuration
