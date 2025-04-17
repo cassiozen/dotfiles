@@ -5,6 +5,7 @@ autoload -Uz compinit vcs_info
 # ------------
 compinit -C
 zstyle ':completion:*' menu yes select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case-insensitive completion
 [[ -n ${terminfo[kcbt]} ]] && bindkey "${terminfo[kcbt]}" reverse-menu-complete  # ⇧Tab ←
 
 # ----------
@@ -51,3 +52,6 @@ alias -g ......='../../../../..'
 # List directory contents
 alias l='ls -lAh'
 alias la='ls -A'
+
+# Load local configuration file if it exists
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

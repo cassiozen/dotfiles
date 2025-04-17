@@ -44,3 +44,7 @@ To update, `cd` into `.dotfiles` then:
 ```zsh
 source bootstrap.sh
 ```
+
+### Local overrides
+
+You can add custom settings on `~/.gitconfig.local` and `~/.zshrc.local`
