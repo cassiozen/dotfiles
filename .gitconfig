@@ -5,6 +5,7 @@
 	ci = commit
 	co = checkout
 	st = status
+	br = branch
 	lol = log --oneline --decorate
 	graph = log --oneline --graph --decorate
 	# Get the current branch name (not so useful in itself, but used in other aliases)
@@ -15,6 +16,9 @@
 	unpublish = "!git push origin :$(git branch-name)"
 	# Clean branches already merged into main (except for dev & stg)
 	cleanup = "!git branch --merged main | grep  -v '\\*\\|main\\|dev|stg' | xargs -n 1 git branch -d"
+[diff]
+  # Better diff (https://adamj.eu/tech/2024/01/18/git-improve-diff-histogram)
+  algorithm = histogram
 [rebase]
 	autostash = true
 [init]
