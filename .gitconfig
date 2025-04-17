@@ -19,3 +19,5 @@
 	autostash = true
 [init]
 	defaultBranch = main
+[include]
+	path = ~/.gitconfig.local

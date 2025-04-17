@@ -2,13 +2,32 @@
 
 git pull origin main;
 
+# Prompt once for the user’s identity
+function gitIdentity() {
+  if [[ ! -f ~/.gitconfig.local ]]; then
+    echo ""
+    echo "Let's set your Git identity (saved to ~/.gitconfig.local)"
+    read "gname?Name: "
+    read "gemail?Email    : "
+
+    cat > ~/.gitconfig.local <<EOF
+[user]
+    name = ${gname}
+    email = ${gemail}
+EOF
+    echo "✓ Saved to ~/.gitconfig.local."
+  fi
+}
+
 function doIt() {
     rsync --exclude ".git/" \
+        --exclude ".gitconfig.local" \
         --exclude ".DS_Store" \
         --exclude "bootstrap.sh" \
         --exclude "README.md" \
         --exclude "LICENSE-MIT.txt" \
         -avh --no-perms . ~
+    gitIdentity
     source ~/.zshrc
 }
 
