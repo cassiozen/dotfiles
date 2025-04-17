@@ -3,7 +3,7 @@
 
 A lightweight, dependency-free setup for Mac OS.
 
-![Image](https://github.com/user-attachments/assets/57bd8a77-a4cd-4cc5-aff6-cf4cf9fc0812)
+![Image](https://github.com/user-attachments/assets/bdfd22f2-1ceb-4de8-ad08-6183c72d4501)
 
 ## Features
 
@@ -35,7 +35,9 @@ A lightweight, dependency-free setup for Mac OS.
 You can clone the repository wherever you want. (I like to keep it in `~/.dotfiles`). The bootstrapper script will pull in the latest version and copy the files to your home folder.
 
 ```zsh
-git clone git@github.com/cassiozen/dotfiles ~/.dotfiles
+git clone git@github.com:cassiozen/dotfiles.git ~/.dotfiles
+```
+```zsh
 cd ~/.dotfiles && source bootstrap.sh
 ```
 
