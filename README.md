@@ -3,7 +3,7 @@
 
 A lightweight, dependency-free setup for Mac OS.
 
-<img width="486" alt="Image" src="https://github.com/user-attachments/assets/5952bbac-5f5f-4913-9692-8f9768370c78" />
+![Image](https://github.com/user-attachments/assets/57bd8a77-a4cd-4cc5-aff6-cf4cf9fc0812)
 
 ## Features
 
