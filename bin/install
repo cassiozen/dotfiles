@@ -1,0 +1,21 @@
+#!/bin/sh
+
+ln -is $(readlink -f gitconfig) ~/.gitconfig
+ln -is $(readlink -f gitignore) ~/.gitignore
+
+cp -i $(readlink -f zshrc) ~/.zshrc
+
+read -p "Your Name for Git Commits: " git_name
+
+if [[ -n $git_name ]]; then
+  read -p "Your Email for Git Commits: " git_email
+
+  echo "" >> ~/.zshrc
+  echo "# GIT CONFIG" >> ~/.zshrc
+  echo "export GIT_AUTHOR_NAME=\"$git_name\"" >> ~/.zshrc
+  echo "export GIT_AUTHOR_EMAIL=\"$git_email\"" >> ~/.zshrc
+  echo "export GIT_COMMITTER_NAME=\"$git_name\"" >> ~/.zshrc
+  echo "export GIT_COMMITTER_EMAIL=\"$git_email\"" >> ~/.zshrc
+
+  echo "Git Name and Email have been appended to ~/.zshrc"
+fi

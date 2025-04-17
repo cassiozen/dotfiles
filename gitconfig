@@ -1,0 +1,21 @@
+[core]
+	excludesfile = ~/.gitignore
+	autocrlf = input
+[alias]
+	ci = commit
+	co = checkout
+	st = status
+	lol = log --oneline --decorate
+	graph = log --oneline --graph --decorate
+	# Get the current branch name (not so useful in itself, but used in other aliases)
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+	# Push the current branch to the remote "origin", and set it to track upstream
+	publish = "!git push -u origin $(git branch-name)"
+	# Delete the remote version of the current branch
+	unpublish = "!git push origin :$(git branch-name)"
+	# Clean branches already merged into main (except for dev & stg)
+	cleanup = "!git branch --merged main | grep  -v '\\*\\|main\\|dev|stg' | xargs -n 1 git branch -d"
+[rebase]
+	autostash = true
+[init]
+	defaultBranch = main
