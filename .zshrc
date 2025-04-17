@@ -54,4 +54,6 @@ alias l='ls -lAh'
 alias la='ls -A'
 
 # Load local configuration file if it exists
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+if [[ -f ~/.zshrc.local ]]; then
+  source ~/.zshrc.local
+fi
