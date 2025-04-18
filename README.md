@@ -25,8 +25,8 @@ A lightweight, dependency-free setup for Mac OS.
 - Quality of Life Improvements:
   - Automatic stashing during rebases
   - Default branch set to main
+  - Better diff algorithm (histogram)
   - Global gitignore configuration
-
 
 ## Installation
 

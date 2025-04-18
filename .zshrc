@@ -28,14 +28,14 @@ zstyle ':vcs_info:git*' actionformats  '%F{14}⏱ %*%f '
 zstyle ':vcs_info:git*' unstagedstr '*'
 zstyle ':vcs_info:git*' stagedstr   '+'
 zstyle ':vcs_info:*:*'  check-for-changes true   # enables %u / %c
+precmd() { vcs_info; print }          # refresh git & blank line
 
 # ------------
 # Prompt
 # ------------
 setopt PROMPT_SUBST
-PROMPT='%~ %F{green}${vcs_info_msg_0_}%f%(?.%F{35}$.%F{red}$)%f '
-precmd() { vcs_info; print }          # refresh git + blank line before
-preexec() { print }                   # blank line after
+PROMPT='%~ %F{green}${vcs_info_msg_0_}%f%(?.%F{35}❯.%F{red}❯)%f '
+
 
 # -------------
 #  Environment

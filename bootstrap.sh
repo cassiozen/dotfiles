@@ -8,7 +8,7 @@ function gitIdentity() {
     echo ""
     echo "Let's set your Git identity (saved to ~/.gitconfig.local)"
     read "gname?Name: "
-    read "gemail?Email    : "
+    read "gemail?Email: "
 
     cat > ~/.gitconfig.local <<EOF
 [user]
@@ -21,8 +21,6 @@ EOF
 
 function doIt() {
     rsync --exclude ".git/" \
-        --exclude ".gitconfig.local" \
-        --exclude ".DS_Store" \
         --exclude "bootstrap.sh" \
         --exclude "README.md" \
         --exclude "LICENSE-MIT.txt" \
