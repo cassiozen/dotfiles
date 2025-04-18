@@ -19,6 +19,8 @@
 [diff]
   # Better diff (https://adamj.eu/tech/2024/01/18/git-improve-diff-histogram)
   algorithm = histogram
+[pull]
+	rebase = false
 [rebase]
 	autostash = true
 [init]

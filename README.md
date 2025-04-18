@@ -3,7 +3,7 @@
 
 A lightweight, dependency-free setup for Mac OS.
 
-![Image](https://github.com/user-attachments/assets/bdfd22f2-1ceb-4de8-ad08-6183c72d4501)
+![Image](https://github.com/user-attachments/assets/ea748cdd-0a4d-4178-a490-4abf9a79ec2f)
 
 ## Features
 
@@ -25,8 +25,8 @@ A lightweight, dependency-free setup for Mac OS.
 - Quality of Life Improvements:
   - Automatic stashing during rebases
   - Default branch set to main
+  - Better diff algorithm (histogram)
   - Global gitignore configuration
-
 
 ## Installation
 
