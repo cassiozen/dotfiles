@@ -28,6 +28,11 @@ A lightweight, dependency-free setup for Mac OS.
   - Better diff algorithm (histogram)
   - Global gitignore configuration
 
+### Others
+
+- `.hushlogin`: Removes the "Last login" string from each new Terminal
+- `.editorconfig`: 120 columns by default (because we're not in the 60s anymore)
+
 ## Installation
 
 **Warning:** If you want to give these dotfiles a try, you should first fork this repository, review & update the config files. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
