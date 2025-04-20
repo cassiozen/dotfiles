@@ -1,7 +1,7 @@
 
 # Cassio Zen’s dotfiles
 
-A lightweight, dependency-free setup for Mac OS.
+A lightweight, dependency-free setup for development environments that prioritizes simplicity and usability.
 
 ![Image](https://github.com/user-attachments/assets/ea748cdd-0a4d-4178-a490-4abf9a79ec2f)
 
@@ -10,28 +10,28 @@ A lightweight, dependency-free setup for Mac OS.
 ### ZSH
 
 - Minimal Prompt with GIT info: Shows current branch, staged (+) and unstaged (*) changes
-- Enhanced Completion: Tab completion with menu selection
-- Arrow Key History Search: Type a command prefix and use ↑/↓ to search history
+- Tab completion with menu selection
+- History Search: Type a the first characters of a given command and use ↑/↓ to search history
 - Directory Navigation: Convenient aliases for listing directories (`l`, `la`) & Shortcuts like `...` for faster directory traversal
 
 ### Git
 
-- Aliases for common commands (`ci`, `co`, `st`)
-- Better Logging: `git lol` and `git graph`
-- Branch Management:
-  - `git publish`: Push and set upstream tracking in one command
-  - `git unpublish`: Remove remote branch easily
-  - `git cleanup`: Safely delete merged branches
-- Quality of Life Improvements:
-  - Automatic stashing during rebases
-  - Default branch set to main
-  - Better diff algorithm (histogram)
-  - Global gitignore configuration
+- Aliases for common commands: `ci` (commit), `co` (checkout), `st` (clean status view - shows your branch and changes without the clutter)
+- Aliases for Listings: Git has inconsistent ways to list things, these aliases provide a consistent 'noun' interface: `git branches`, `git tags`, `git stashes` and `git remotes`.
+- Better Logging: `git lol` (compact log view) and `git graph` (see how your branches connect).
+
+Quality of Life Improvements:
+
+- Default branch set to main
+- Global gitignore configuration
+- Cleaner diffs with to the histogram algorithm
+- Branches track their remotes automatically when you push
+- Automatic stashing during rebases
 
 ### Others
 
-- `.hushlogin`: Removes the "Last login" string from each new Terminal
-- `.editorconfig`: 120 columns by default (because we're not in the 60s anymore)
+- `.hushlogin`:  Skips the "Last login" message and other system information displayed at terminal startup. Note that this file is intentionally empty — its presence alone activates this functionality.
+- `.editorconfig`: 120 columns of text by default (because we're not in the 80s anymore)
 
 ## Installation
 
@@ -55,3 +55,5 @@ source bootstrap.sh
 ### Local overrides
 
 You can add custom settings on `~/.gitconfig.local` and `~/.zshrc.local`
+
+This makes it easy to keep your core configuration in version control while maintaining machine-specific settings separately.
