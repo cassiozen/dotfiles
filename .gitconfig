@@ -1,31 +1,30 @@
 [core]
-	excludesfile = ~/.gitignore
-	autocrlf = input
+  excludesfile = ~/.gitignore
+  autocrlf = input
 [alias]
-	# Basic shortcuts
-	ci = commit
-	co = checkout
-	st = status --short --branch
-	# Log visualization
-	lol = log --oneline --decorate
-	graph = log --oneline --graph --decorate
-	# List commands - Git has inconsistent ways to list things,
-	# these aliases provide a consistent 'noun' interface
-	branches = branch -a
-	tags = tag
-	stashes = stash list
-	remotes = remote -v
-
+  # Basic shortcuts
+  ci = commit
+  co = checkout
+  st = status --short --branch
+  # Log visualization
+  lol = log --oneline --decorate
+  graph = log --oneline --graph --decorate
+  # List commands - Git has inconsistent ways to list things,
+  # these aliases provide a consistent 'noun' interface:
+  branches = branch -a
+  tags = tag
+  stashes = stash list
+  remotes = remote -v
 [push]
-	autoSetupRemote = true
+  autoSetupRemote = true
 [diff]
   # Better diff algorithm
   algorithm = histogram
 [pull]
-	rebase = false
+  rebase = false
 [rebase]
-	autostash = true
+  autostash = true
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [include]
-	path = ~/.gitconfig.local
+  path = ~/.gitconfig.local

@@ -12,8 +12,8 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case-insensitive com
 #  Git prompt (vcs_info)
 # ----------------------
 zstyle ':vcs_info:*'   enable git
-zstyle ':vcs_info:git*' formats        '[%b%u%c] '
-zstyle ':vcs_info:git*' actionformats  '%F{14}⏱ %*%f '
+zstyle ':vcs_info:git*' formats        '%F{245}%b%f%F{167}%u%f%F{178}%c%f '
+zstyle ':vcs_info:git*' actionformats  '%F{245}⏱ %b|%a%f '
 zstyle ':vcs_info:git*' unstagedstr '*'
 zstyle ':vcs_info:git*' stagedstr   '+'
 zstyle ':vcs_info:*:*'  check-for-changes true   # enables %u / %c
@@ -23,7 +23,10 @@ precmd() { vcs_info; print }          # refresh git & blank line
 # Prompt
 # ------------
 setopt PROMPT_SUBST
-PROMPT='%~ %F{green}${vcs_info_msg_0_}%f%(?.%F{35}❯.%F{red}❯)%f '
+local user_prompt_symbol="❯" 
+local root_prompt_symbol="#"
+PROMPT='%F{blue}%~ ${vcs_info_msg_0_}%(?.%F{083}.%F{197})%(!.${root_prompt_symbol}.${user_prompt_symbol})%f '
+
 
 # -------------
 #  Environment
