@@ -20,7 +20,8 @@
   # Auto-create remote tracking branches
   autoSetupRemote = true
 [diff]
-  # Better diff algorithm
+  # Better diff
+  # https://blog.gitbutler.com/how-git-core-devs-configure-git/#better-diff
   algorithm = histogram
   colorMoved = plain
   mnemonicPrefix = true
@@ -29,7 +30,6 @@
   # Auto-cleanup remote references
   prune = true
   pruneTags = true
-  all = true
 [help]
   # Suggest corrections for typos
   autocorrect = prompt
@@ -39,7 +39,9 @@
   autostash = true
   updateRefs = true
 [rerere]
-  # Reuse recorded merge conflict resolutions
+  # Reuse Recorded Resolutions: 
+  # Remembers how you resolved conflicts and automatically applies 
+  # the same fix when identical conflicts occur again in future merges/rebases
   enabled = true
   autoupdate = true
 [init]
