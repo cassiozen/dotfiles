@@ -6,6 +6,7 @@
   ci = commit
   co = checkout
   st = status --short --branch
+  sw = switch
   # Log visualization
   lol = log --oneline --decorate
   graph = log --oneline --graph --decorate
@@ -16,15 +17,33 @@
   stashes = stash list
   remotes = remote -v
 [push]
+  # Auto-create remote tracking branches
   autoSetupRemote = true
 [diff]
   # Better diff algorithm
   algorithm = histogram
-[pull]
-  rebase = false
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+[fetch]
+  # Auto-cleanup remote references
+  prune = true
+  pruneTags = true
+  all = true
+[help]
+  # Suggest corrections for typos
+  autocorrect = prompt
 [rebase]
+  # Automate rebase workflows:
+  # stash changes before rebase, update dependent branches
   autostash = true
+  updateRefs = true
+[rerere]
+  # Reuse recorded merge conflict resolutions
+  enabled = true
+  autoupdate = true
 [init]
   defaultBranch = main
 [include]
+  # Machine-specific overrides
   path = ~/.gitconfig.local
