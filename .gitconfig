@@ -16,6 +16,19 @@
   tags = tag
   stashes = stash list
   remotes = remote -v
+  # Stacked branches utilities
+  # https://andrewlock.net/pushing-a-whole-stack-of-branches-with-a-single-git-command/
+  _default-branch = "!git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'"
+  _merge-base-origin ="!f() { git merge-base ${1-HEAD} origin/$(git _default-branch); };f "
+  stack = "!f() { \
+    BRANCH=${1-HEAD}; \
+    MERGE_BASE=$(git _merge-base-origin $BRANCH); \
+    git log --decorate-refs=refs/heads --simplify-by-decoration --pretty=format:\"%(decorate:prefix=,suffix=,tag=,separator=%n)\" $MERGE_BASE..$BRANCH; \
+  };f "
+  push-stack = "!f() { \
+    BRANCH=${1-HEAD}; \
+    git stack $BRANCH | xargs -I {} git push --force-with-lease origin {}; \
+  };f "
 [push]
   # Auto-create remote tracking branches
   autoSetupRemote = true
