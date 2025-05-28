@@ -19,14 +19,14 @@ A lightweight, dependency-free setup for development environments that prioritiz
 - Aliases for common commands: `ci` (commit), `co` (checkout), `st` (clean status view - shows your branch and changes without the clutter)
 - Aliases for Listings: Git has inconsistent ways to list things, these aliases provide a consistent 'noun' interface: `git branches`, `git tags`, `git stashes` and `git remotes`.
 - Better Logging: `git lol` (compact log view) and `git graph` (see how your branches connect).
+- Branch Stacking: git stack (lists all branches in your current stack) and git push-stack (pushes all stacked branches with one command) for managing chains of dependent feature branches. Useful when breaking large features into smaller, reviewable PRs that build upon each other.
 
 Quality of Life Improvements:
 
-- Default branch set to main
 - Global gitignore configuration
 - Cleaner diffs with to the histogram algorithm
 - Branches track their remotes automatically when you push
-- Automatic stashing during rebases
+- Conflict resolution memory: Git remembers how you've resolved conflicts and automatically applies the same fixes in future rebases/merges
 
 ### Others
 
